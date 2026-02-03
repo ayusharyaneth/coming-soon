@@ -6,7 +6,7 @@ import ThreeBackground from "@/components/ThreeBackground";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-start p-4 md:p-8 relative overflow-x-hidden bg-[#050505] text-white selection:bg-primary/20">
+    <div className="min-h-screen flex flex-col items-center justify-start p-4 md:p-8 pb-32 relative overflow-x-hidden bg-[#050505] text-white selection:bg-primary/20">
       <ThreeBackground />
 
       {/* Background Decor */}
@@ -106,18 +106,25 @@ export default function Home() {
       </main>
 
 
-      <footer className="relative z-10 w-full mt-auto py-6">
-        <div className="container mx-auto px-6">
-          <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-white/5 to-transparent mb-6" />
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 opacity-40 hover:opacity-100 transition-opacity duration-500">
-            <div className="flex items-center gap-6">
-              <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center transform -rotate-12 transition-transform shadow-[0_0_15px_-5px_rgba(255,255,255,0.3)]">
-                <span className="text-black font-black text-xl font-sans">A</span>
+      <footer className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-4xl">
+        <div className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl md:rounded-full px-6 py-3 shadow-[0_8px_32px_0_rgba(0,0,0,0.8)] border-white/5 transition-all duration-300 hover:border-white/10">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            {/* Left: Branding */}
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center transform -rotate-6 transition-transform hover:rotate-0">
+                <span className="text-black font-black text-lg font-sans">A</span>
               </div>
-              <span className="text-[10px] font-mono tracking-[0.2em] font-bold">© 2026 AYUSH <span className="text-primary">XD</span></span>
+              <span className="text-sm font-bold tracking-tight text-white/90 whitespace-nowrap">Ayush <span className="text-primary">XD</span></span>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="text-[9px] uppercase tracking-[0.3em] font-black italic">HANDCRAFTED WITH OBSESSION</span>
+
+            {/* Center: Tagline */}
+            <div className="hidden md:flex items-center gap-2">
+              <span className="text-[9px] uppercase tracking-[0.4em] font-black italic text-zinc-500">HANDCRAFTED WITH OBSESSION</span>
+            </div>
+
+            {/* Right: Copyright */}
+            <div className="flex items-center">
+              <span className="text-[10px] md:text-xs font-mono font-bold text-zinc-500 whitespace-nowrap">Copyright 2026 © Ayush XD</span>
             </div>
           </div>
         </div>
