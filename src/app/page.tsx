@@ -106,29 +106,46 @@ export default function Home() {
       </main>
 
 
-      <footer className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-4xl">
-        <div className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl md:rounded-full px-6 py-3 shadow-[0_8px_32px_0_rgba(0,0,0,0.8)] border-white/5 transition-all duration-300 hover:border-white/10">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+      <motion.footer
+        initial={{ opacity: 0, y: 20, x: "-50%" }}
+        animate={{ opacity: 1, y: 0, x: "-50%" }}
+        transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+        whileHover={{ scale: 1.01 }}
+        className="fixed bottom-6 left-1/2 z-50 w-[95%] max-w-4xl group"
+      >
+        <div className="absolute inset-x-12 -bottom-2 h-8 bg-primary/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+        <div className="relative bg-[#050505]/60 backdrop-blur-3xl border border-white/10 rounded-2xl md:rounded-full px-5 py-3 md:px-8 md:py-4 shadow-[0_8px_40px_-10px_rgba(0,0,0,0.8)] transition-all duration-500 hover:border-primary/30 overflow-hidden">
+          {/* Shine effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out pointer-events-none" />
+
+          <div className="flex flex-row justify-between items-center gap-4 relative z-10 w-full px-2">
             {/* Left: Branding */}
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center transform -rotate-6 transition-transform hover:rotate-0">
-                <span className="text-black font-black text-lg font-sans">A</span>
+              <div className="w-8 h-8 md:w-10 md:h-10 bg-white rounded-lg md:rounded-xl flex items-center justify-center transform -rotate-12 transition-all duration-500 group-hover:rotate-0 group-hover:scale-110 shadow-[0_0_20px_-5px_rgba(255,255,255,0.4)]">
+                <span className="text-black font-black text-lg md:text-xl font-sans">A</span>
               </div>
-              <span className="text-sm font-bold tracking-tight text-white/90 whitespace-nowrap">Ayush <span className="text-primary">XD</span></span>
+              <span className="text-sm md:text-base font-bold tracking-tight text-white transition-colors duration-300 group-hover:text-primary whitespace-nowrap">
+                Ayush <span className="text-primary italic">XD</span>
+              </span>
+
             </div>
 
             {/* Center: Tagline */}
-            <div className="hidden md:flex items-center gap-2">
-              <span className="text-[9px] uppercase tracking-[0.4em] font-black italic text-zinc-500">HANDCRAFTED WITH OBSESSION</span>
+            <div className="hidden lg:block">
+              <span className="text-[9px] uppercase tracking-[0.8em] font-black italic text-zinc-400">
+                HANDCRAFTED WITH OBSESSION
+              </span>
             </div>
 
             {/* Right: Copyright */}
             <div className="flex items-center">
-              <span className="text-[10px] md:text-xs font-mono font-bold text-zinc-500 whitespace-nowrap">Copyright 2026 © Ayush XD</span>
+              <span className="text-[10px] md:text-[11px] font-mono font-bold text-zinc-400 whitespace-nowrap tracking-tight">
+                © 2026 <span className="text-white">Ayush XD</span>
+              </span>
             </div>
           </div>
         </div>
-      </footer>
+      </motion.footer>
     </div>
   );
 }
