@@ -3,11 +3,22 @@
 @theme {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-primary: #26D968;
+  --color-background: #050505;
+  --color-foreground: #ffffff;
+  --color-border: color-mix(in srgb, var(--color-white), transparent 95%);
+  --color-card: color-mix(in srgb, var(--color-zinc-900), transparent 50%);
+  --color-muted-foreground: var(--color-zinc-500);
 }
 
 :root {
   --background: #050505;
   --foreground: #ffffff;
+}
+
+::selection {
+  background-color: #16a2494d;
+  color: inherit;
 }
 
 body {
@@ -16,4 +27,19 @@ body {
   font-family: var(--font-sans), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@layer utilities {
+  @keyframes ping-slow {
+
+    75%,
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+
+  .animate-ping-slow {
+    animation: ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
 }
