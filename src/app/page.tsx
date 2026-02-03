@@ -3,9 +3,9 @@ import { Instagram, Twitter, Send, Sparkles } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-4 relative overflow-hidden bg-[#050505] text-white selection:bg-white/20 from-zinc-900 to-black">
+    <div className="min-h-screen flex flex-col items-center justify-between p-4 relative overflow-x-hidden bg-[#050505] text-white selection:bg-white/20 from-zinc-900 to-black">
       {/* Background Decor */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
+      <div className="fixed inset-0 w-full h-full pointer-events-none z-0">
         {/* Large Dark Swoop from Top Right */}
         <svg
           className="absolute top-0 right-0 w-[90%] md:w-[70%] h-auto text-zinc-900/40 fill-current transform translate-x-[20%] -translate-y-[10%]"
@@ -37,12 +37,12 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/90" />
       </div>
 
-      <nav className="absolute top-8 md:top-12 flex items-center gap-2 animate-fade-in-down">
+      <nav className="relative z-10 mt-8 md:mt-12 flex items-center gap-2 animate-fade-in-down mb-20">
         <Sparkles className="w-6 h-6 text-white" />
         <span className="text-xl font-bold tracking-wide">iosoon</span>
       </nav>
 
-      <main className="flex flex-col items-center text-center z-10 max-w-3xl w-full mt-10 md:mt-0">
+      <main className="relative z-10 flex flex-col items-center text-center max-w-3xl w-full flex-grow mb-32">
         <h1 className="text-4xl md:text-7xl font-bold mb-6 tracking-tight drop-shadow-lg">
           We&apos;re Coming Soon!
         </h1>
@@ -55,7 +55,7 @@ export default function Home() {
         <NotifyForm />
       </main>
 
-      <footer className="absolute bottom-6 md:bottom-12 flex flex-col items-center w-full px-4">
+      <footer className="relative z-10 flex flex-col items-center w-full px-4 mb-12">
         {/* Get in Touch Pill */}
         <div className="px-4 py-1.5 rounded-full bg-[#051a0f] border border-[#0a381e] text-[#22c55e] text-[10px] md:text-xs font-bold tracking-[0.2em] mb-4 md:mb-6">
           GET IN TOUCH
